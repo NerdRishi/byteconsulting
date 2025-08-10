@@ -14,16 +14,17 @@ LOGO_PATH = "assets/logo.png"
 BROWSE_OPTION = "⬇️ Browse your own..."
 
 # --- AUTHENTICATION SETUP ---
-with open('./config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
+import yaml
+config = st.secrets["config"]
+credentials = yaml.safe_load(config['credentials'])     # <-- THIS MUST BE HERE
+cookie = yaml.safe_load(config['cookie'])
 
 authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days']
+    credentials,
+    cookie['name'],
+    cookie['key'],
+    cookie['expiry_days']
 )
-
 # --- LOGIN WIDGET ---
 authenticator.login()
 
