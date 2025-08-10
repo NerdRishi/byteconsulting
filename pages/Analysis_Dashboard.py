@@ -24,14 +24,17 @@ st.set_page_config(layout="centered", page_title="Analysis | Byte Consulting")
 LOGO_PATH = "assets/logo.png"
 
 # --- AUTHENTICATION SETUP ---
-with open('./config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
+import streamlit as st
+import yaml
+config = st.secrets["config"]
+credentials = yaml.safe_load(config['credentials'])
+cookie = yaml.safe_load(config['cookie'])
 
 authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days']
+    credentials,
+    cookie["name"],
+    cookie["key"],
+    cookie["expiry_days"]
 )
 
 name = st.session_state.get("name")
