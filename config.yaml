@@ -1,0 +1,17 @@
+credentials:
+  usernames:
+    Rishabh:
+      email: Rishabhkmr037@gmail.com
+      name: Rishabh
+      password: 'Rishabh1' # IMPORTANT: Run the app once to convert this to a hash
+    palak:
+      email: palak@byteconsulting.in
+      name: Palak Jalan
+      password: 'palak@byte' # IMPORTANT: Run the app once to convert this to a hash
+cookie:
+  expiry_days: 30
+  key: some_signature_key # Can be any random string
+  name: some_cookie_name # Can be any random string
+preauthorized:
+  emails:
+  - rishabhkmr037@gmail.com

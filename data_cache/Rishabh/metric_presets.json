@@ -1,0 +1,18 @@
+{
+    "Daily": [
+        "Sales (Rs)",
+        "Delivered orders"
+    ],
+    "Weekly": [
+        "Sales (Rs)",
+        "Delivered orders",
+        "Bad orders",
+        "Total complaints"
+    ],
+    "Monthly": [
+        "Sales (Rs)",
+        "Impressions",
+        "Menu opens",
+        "Cart to orders (%)"
+    ]
+}
